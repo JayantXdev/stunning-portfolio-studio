@@ -56,7 +56,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.35 }}
-          className="flex items-center gap-3"
+          className="flex flex-wrap items-center gap-3"
         >
           <a
             href="https://drive.google.com/file/d/1iYw8mo1_gJTicTYwSE0g8PbWrF7mDOXG/view?usp=sharing"
@@ -74,18 +74,20 @@ const HeroSection = () => {
             Contact
           </a>
 
-          <span className="w-px h-8 bg-border mx-1" />
+          <span className="hidden sm:block w-px h-8 bg-border mx-1" />
 
-          {socials.map((social) => (
-            <a
-              key={social.label}
-              href={social.href}
-              className="w-10 h-10 rounded-lg border border-border bg-card flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors"
-              aria-label={social.label}
-            >
-              <social.icon size={18} />
-            </a>
-          ))}
+          <div className="flex items-center gap-2 sm:gap-3 w-full sm:w-auto mt-2 sm:mt-0">
+            {socials.map((social) => (
+              <a
+                key={social.label}
+                href={social.href}
+                className="w-10 h-10 rounded-lg border border-border bg-card flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors"
+                aria-label={social.label}
+              >
+                <social.icon size={18} />
+              </a>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>
