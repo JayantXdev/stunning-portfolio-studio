@@ -58,29 +58,29 @@ const ExperienceSection = () => {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="rounded-xl border border-border bg-card p-6"
             >
-              <div className="flex items-start justify-between gap-4 mb-4">
-                <div className="flex items-start gap-3">
-                  <div
-                    className={`w-12 h-12 rounded-lg  border border-border flex items-center justify-center text-foreground font-bold text-lg shrink-0`}
-                  >
-                    <img src={exp.icon} alt={exp.company} className="w-8 h-8" />
-                  </div>
-                  <div>
+              <div className="flex items-start gap-3 mb-4">
+                <div
+                  className={`w-12 h-12 rounded-lg border border-border flex items-center justify-center text-foreground font-bold text-lg shrink-0`}
+                >
+                  <img src={exp.icon} alt={exp.company} className="w-8 h-8" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between sm:gap-4">
                     <h3 className="text-base font-semibold text-foreground">
                       {exp.title}
                     </h3>
-                    <p className="text-sm text-muted-foreground">
-                      <span className="text-foreground font-medium">
-                        {exp.company}
-                      </span>
-                      {" · "}
-                      {exp.location}
-                    </p>
+                    <span className="text-xs text-muted-foreground whitespace-nowrap sm:pt-1 mt-1 sm:mt-0">
+                      {exp.period}
+                    </span>
                   </div>
+                  <p className="text-sm text-muted-foreground mt-1">
+                    <span className="text-foreground font-medium">
+                      {exp.company}
+                    </span>
+                    {" · "}
+                    {exp.location}
+                  </p>
                 </div>
-                <span className="text-xs text-muted-foreground whitespace-nowrap pt-1">
-                  {exp.period}
-                </span>
               </div>
 
               <p className="text-sm text-muted-foreground leading-relaxed mb-3">
